@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>MyPortfolio</h1>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#Education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+        
+        
+       
+        <li><a href="KADU_SRUSHTI-RESUME.pdf"download="KADU_SRUSHTI-RESUME.pdf" class="resume-btn">View Resume</a></li>
+
+
+
+
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section" style="text-align: center; padding: 50px 20px;">
+  <h2 style="font-size: 2rem; margin-bottom: 10px;">Hii,I'm Srushti Kadu</h2>
+  <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+    Final-year Electronics & Telecommunication Engineering Student | Aspiring Software Engineer | Data Science Enthusiast
+  </p>
+</section>
+
+
+  
+<section id="skills" class="section skills-section">
+<h2>About Me</h2>
+  <div class="about-container">
+    <div class="profile-pic">
+      <img src="assets/profile_pic.jpeg" alt="Profile Picture">
+    </div>
+    <div class="about-text">
+      <p>
+        I’m a final-year Electronics & Telecommunication Engineering student passionate about building real-world solutions through technology.
+        I enjoy combining creativity with technical skills to solve problems effectively. Always eager to learn and adapt, I thrive on turning ideas into impactful innovations.
+        I embrace challenges as opportunities to learn and grow in both technical and creative aspects.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section skills-section">
+  <h2>Skills</h2>
+
+  <div class="skills-wrapper">
+    <div class="skills-box">
+      
+      <div class="skills-grid">
+        <div class="skill-item">
+          <img src="assets/cpp_logo.png" alt="C++" />
+          <p>C++</p>
+        </div>
+        <div class="skill-item">
+          <img src="assets/python_logo.jpg" alt="Python" />
+          <p>Python</p>
+        </div>
+        <div class="skill-item">
+          <img src="assets/java_logo.png" alt="Java" />
+          <p>Java</p>
+        </div>
+        <div class="skill-item">
+          <img src="assets/django_logo.png" alt="Django" />
+          <p>Django</p>
+        </div>
+        <div class="skill-item">
+          <img src="assets/javascript_logo.png" alt="JavaScript" />
+          <p>JavaScript</p>
+        </div>
+        <div class="skill-item">
+          <img src="assets/html_logo.png" alt="HTML/CSS" />
+          <p>HTML/CSS</p>
+        </div>
+        <div class="skill-item">
+          <img src="assets/mysql_logo.png" alt="MySQL" />
+          <p>MySQL</p>
+        </div>
+        <div class="skill-item">
+          <img src="assets/vscode_logo.png" alt="VSCode" />
+          <p>VSCode</p>
+        </div>
+        <div class="skill-item">
+          <img src="assets/github_logo.png" alt="GitHub" />
+          <p>GitHub</p>
+        </div>
+        <div class="skill-item">
+          <img src="assets/git_logo.png" alt="Git" />
+          <p>Git</p>
+        </div>
+        
+      </div>
+    </div>        
+  </div>
+</section>
+
+<section id="Education" class="section" data-aos="fade-up">
+  <h2>Education</h2>
+  <ul class="timeline" id="education-list">
+    <!-- Education items will be inserted here dynamically -->
+  </ul>
+</section>
+
+<script>
+  const educationData = [
+    {
+      degree: "B.E. in Electronics & Telecommunication Engineering",
+      institute: "JSPM’s Jayawantrao Sawant College of Engineering, Hadapsar",
+      score: "CGPA: 8.88",
+      period: "2022 – 2026"
+    },
+    {
+      degree: "HSC",
+      institute: "BSKP Junior College Satral",
+      score: "Percentage: 85.17%",
+      period: "2020 – 2022"
+    },
+    {
+      degree: "SSC",
+      institute: "Kanya Vidyalaya Satral",
+      score: "Percentage: 93.60%",
+      period: "2010 – 2020"
+    }
+  ];
+
+  const ul = document.getElementById('education-list');
+
+  educationData.forEach(item => {
+    const li = document.createElement('li');
+
+    li.innerHTML = `
+      <strong>${item.degree}</strong><br>
+      ${item.institute}<br>
+      ${item.score} | ${item.period}
+    `;
+
+    ul.appendChild(li);
+  });
+</script>
+
+<section id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <h3>FinVision AI</h3>
+      <ul class="project-features">
+        <li>AI-powered personal finance management system</li>
+        <li>Smart dashboards with budgeting (50/30/20 rule)</li>
+        <li>Goal tracking, CSV/manual entry, AI suggestions</li>
+        <li>Savings predictions & PDF reports</li>
+      </ul>
+      <p class="tech-stack">
+        <strong>Technologies:</strong> Django, Python, HTML/CSS, Bootstrap, AI, Pandas, Chart.js
+      </p>
+      <a href="https://github.com/srushtikadu2012/FinvisionAI-Ai-powered-financial-coach" target="_blank" class="github-link">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Blood_Link</h3>
+      <ul class="project-features">
+        <li>Django-based platform to streamline blood donation & requests</li>
+        <li>Role-based access for donors, hospitals & admins</li>
+        <li>Stock tracking, request management, real-time approvals</li>
+      </ul>
+      <p class="tech-stack">
+        <strong>Technologies:</strong> Django, Python, HTML/CSS, Bootstrap
+      </p>
+      <a href="https://github.com/srushtikadu2012/Blood_Link_Project" target="_blank" class="github-link">View on GitHub</a>
+    </div>
+
+  </div>
+</section>
+
+
+    
+  
+
+
+  
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <p class="contact-subtitle">Let’s connect! Reach out through any of these platforms.</p>
+
+  <div class="contact-circles">
+    <a href="mailto:srushtikadu2012@gmail.com" target="_blank" rel="noopener">
+      <div class="icon-circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+      </div>
+      <span>Email</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/srushti-kadu-9ab87925b" target="_blank" rel="noopener">
+      <div class="icon-circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </div>
+      <span>LinkedIn</span>
+    </a>
+
+    <a href="https://github.com/srushtikadu2012" target="_blank" rel="noopener">
+      <div class="icon-circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+      </div>
+      <span>GitHub</span>
+    </a>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Srushti Kadu. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

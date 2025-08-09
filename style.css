@@ -1,0 +1,478 @@
+
+/* ========= Global Reset ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========= Base ========= */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #FFFAE5; /* Ivory page bg */
+  color: #1B1821;      /* Black text */
+  line-height: 1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ========= Header / Nav (unchanged look) ========= */
+header {
+  background: #56382D; /* Carafe */
+  color: #FFFAE5;
+  padding: 18px 36px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links li a {
+  color: #FFFAE5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #FFF2DC;
+}
+
+.resume-btn {
+  padding: 10px 18px;
+  background: #935F4C; /* Tan */
+  color: #FFFAE5;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background .2s, color .2s;
+}
+.resume-btn:hover { background:#D2B48C; color:#1B1821; }
+
+/* ========= MAIN SECTION CARD STYLE =========
+   Apply card style to every main <section> used as a page block.
+   Your HTML uses class="section" for many sections and .about for the about block.
+   We'll style both so all sections look like boxed cards.
+=========================================== */
+.section,
+.about {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 36px 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  color: #362c2a; /* Carafe-ish body text on cards */
+}
+
+/* keep page .section text centered headings */
+.section h2,
+.about h1,
+.about h2 {
+  margin-bottom: 18px;
+}
+
+/* unify section headings */
+.section h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #1B1821;
+}
+
+/* if your about uses a plain h1, keep it big */
+.about .about-text h1,
+.about h1 {
+  font-size: 32px;
+  color: #1B1821;
+}
+
+/* ========= ABOUT (image + text) ========= */
+.about-container {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.profile-pic img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 4px solid #d2b48c; /* Tan border */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+/* About text styles */
+.about-text h1 { margin-bottom: 10px; }
+.about-text p { margin-bottom: 14px; color:#3B2F2F; font-size: 1.05rem; }
+.about-text .edu-info { color:#3B2F2F; margin-bottom: 12px; line-height:1.3; }
+
+/* quote style */
+.about-text blockquote {
+  border-left: 4px solid #935F4C; /* Tan */
+  background: #F6F1EB;
+  padding: 12px 16px;
+  font-style: italic;
+  border-radius: 6px;
+  margin: 12px 0 18px;
+  color: #3B2F2F;
+}
+
+/* social icons row */
+.social-links {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.social-links a img {
+  width: 36px;
+  height: 36px;
+  transition: transform .18s ease, opacity .18s;
+}
+.social-links a img:hover { transform: scale(1.06); opacity: 0.9; }
+
+/* ========= SKILLS ========= */
+/* The skills card is already a .section; inside it we keep two boxed columns (.skills-box) */
+.skills-wrapper {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+/* each sub-box (technical / soft) */
+.skills-box {
+  flex: 1;
+  min-width: 300px;
+  background: #F8F9FA;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border: 1px solid rgba(55,41,25,0.04);
+}
+
+.skills-box h3 {
+  text-align: center;
+  margin-bottom: 14px;
+  color: #362c2a;
+  font-size: 1.15rem;
+}
+
+/* grid of logos inside each box */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
+  align-items: center;
+  justify-items: center;
+}
+
+/* skill item: logo above, dark name below */
+.skill-item {
+  text-align: center;
+}
+.skill-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform .18s ease, filter .18s;
+  filter: grayscale(0%); /* logos shown normally; if you need dark icons, use dark SVGs */
+}
+.skill-item img:hover { transform: translateY(-6px) scale(1.06); }
+.skill-item p {
+  margin-top: 8px;
+  font-weight: 700;
+  color: #111; /* dark name text */
+  font-size: 0.95rem;
+}
+
+/* ========= PROJECTS (card already .section) ========= */
+.projects-grid {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.project-card {
+  background-color: #fff;
+  border: 2px solid #d2b48c; /* Tan accent */
+  border-radius: 12px;
+  padding: 22px;
+  width: 440px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+  transition: transform .2s ease;
+}
+.project-card:hover { transform: translateY(-6px); }
+
+.project-card h3 { color: #362c2a; margin-bottom: 10px; }
+.project-card p { color: #3B2F2F; margin-bottom: 10px; line-height:1.5; }
+
+.github-link {
+  display: inline-block;
+  background-color: #362c2a;
+  color: #fff;
+  padding: 10px 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight:700;
+}
+.github-link:hover { background: #000; }
+
+/* ========= CONTACT FORM ========= */
+
+/* inputs inside contact form — keep your existing look while staying in the card */
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  background: #fff;
+  border: 1px solid #d2b48c; /* subtle tan border */
+  color: #1B1821;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+form button {
+  background: #56382D; /* Carafe */
+  color: #FFFAE5;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+form button:hover { background: #000; }
+
+/* ========= FOOTER ========= */
+footer {
+  text-align: center;
+  padding: 18px;
+  background: #56382D;
+  color: #FFFAE5;
+  margin-top: 40px;
+}
+
+/* ========= SMALL SCREENS ========= */
+@media (max-width: 900px) {
+  .about-container { flex-direction: column; align-items: center; text-align: center; }
+  .profile-pic img { width: 200px; height: 200px; }
+  .skills-wrapper { flex-direction: column; align-items: stretch; }
+  .project-card { width: 100%; max-width: 520px; }
+  .section, .about { padding: 26px 20px; margin: 24px auto; }
+}
+ .about-container {
+  display: flex;
+  align-items: center;        /* Vertically center */
+  justify-content: center;    /* Center content */
+  gap: 50px;                   /* Space between image & text */
+  max-width: 1000px;           /* More space */
+  margin: auto;
+  padding: 50px 20px;
+  flex-wrap: wrap;             /* Stack on smaller screens */
+}
+
+.profile-pic {
+  width: 280px;                /* Bigger image */
+  height: 280px;               /* Keep square */
+  border-radius: 15px;         /* Smooth corners */
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* Soft shadow for depth */
+}
+
+.about-text {
+  max-width: 500px;
+  text-align: justify;         /* Neat block text */
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 per row */
+  gap: 30px; /* spacing between items */
+  max-width: 1000px;
+  margin: auto;
+}
+
+.skill-item {
+  text-align: center;
+}
+
+.skill-item img {
+  width: 80px; /* logo size */
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.skill-item p {
+  font-size: 16px;
+  color: #333;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.project-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.project-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.project-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.project-features li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+
+.tech-stack {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.github-link {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.github-link:hover {
+  background: #555;
+}
+
+  /* Basic block style for education section */
+  #education {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  }
+  #education h2 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .timeline {
+    list-style: none;
+    padding: 0;
+  }
+  .timeline li {
+    margin-bottom: 18px;
+    line-height: 1.4;
+  }
+
+   #contact.section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  #contact h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #555;
+  }
+
+  .contact-circles {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .contact-circles a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+
+  .contact-circles a:hover {
+    color: #0073b1; /* LinkedIn blue as example */
+  }
+
+  .icon-circle {
+    background: white;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 8px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon-circle img {
+    width: 30px;
+    height: 30px;
+  }
